@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container m-5">
+    <div class="col-lg-8">
+            <div class="card text-white  m-5">
+
+                <div class="card-body">
+                <h5 class="card-title">Result</h5>
+                <p class="card-text">
+                    <h1>Score: {{ result.result }}</h1>
+
+                    {% if result.result >= 40 and result.result < 60 %}
+
+                    <h1>You are friends</h1>
+
+                    {% elif result.result >= 60 and result.result < 80 %}
+
+                    <h1>You are good friends</h1>
+
+                    {% elif result.result > 80 and result.result < 100 %}
+
+                    <h1>You are best friends</h1>
+
+                    {% elif result.result >= 100 %}
+
+                    <h1>You are made for each other</h1>
+
+                    {% else %}
+
+                    <h1>You are not friends</h1>
+
+                    {% endif %}
+
+                </p>
+                </div>
+            
+            <a class=" card-link btn btn-warning" href="{% url 'home'%}" >Back to home</a>
+            </div>
+            </div>
+    </div>
+
+</div>
+{% endblock %}
